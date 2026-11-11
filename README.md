@@ -284,7 +284,7 @@ Workers Buildsでは`main`を本番デプロイし、その他のブランチは
 
 `/contact`、`/en/contact`、`/ko/contact`から`/api/contact`へ送信します。Worker側でOrigin、Content-Type、入力値、Honeypot、Rate Limit、Turnstileを検証し、Resendで`contact.ivuru@ivrm.jp`へ通知します。受付メールとDiscord通知は補助通知です。
 
-必要な設定、通知再試行、ログ方針は[CONTACT_SETUP.md](./CONTACT_SETUP.md)と[CONTACT_DELIVERY.md](./CONTACT_DELIVERY.md)を参照してください。SecretやWebhook URLをリポジトリへ保存しないでください。
+必要な設定、通知再試行、ログ方針は[CONTACT_SETUP.md](./docs/CONTACT_SETUP.md)と[CONTACT_DELIVERY.md](./docs/CONTACT_DELIVERY.md)を参照してください。SecretやWebhook URLをリポジトリへ保存しないでください。
 
 ## Performance and accessibility
 
