@@ -31,7 +31,7 @@ jobs:
           npm audit --omit=dev --audit-level=high --json | tee npm-audit.json
       - name: 依存監査レポートを保存
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: npm-audit-report-${{ github.run_attempt }}
           path: npm-audit.json
@@ -60,7 +60,7 @@ jobs:
           ASTRO_TELEMETRY_DISABLED: '1'
       - name: Astro Check診断Artifactを保存
         if: failure() && steps.astro-check.outcome == 'failure'
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: astro-check-diagnostics-${{ github.run_attempt }}
           path: astro-check.log
@@ -73,7 +73,7 @@ jobs:
         run: npm run lint -- --format json > eslint-report.json || true
       - name: ESLint診断Artifactを保存
         if: failure() && steps.lint.outcome == 'failure'
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: eslint-diagnostics-${{ github.run_attempt }}
           path: eslint-report.json
@@ -104,7 +104,7 @@ jobs:
           fi
       - name: Prettier整形差分を保存
         if: failure() && steps.format-check.outcome == 'failure'
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: prettier-format-diagnostics-${{ github.run_attempt }}
           path: prettier-format.patch
@@ -118,7 +118,7 @@ jobs:
           npm test 2>&1 | tee unit-test.log
       - name: Unit Test診断Artifactを保存
         if: failure() && steps.unit-test.outcome == 'failure'
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: unit-test-diagnostics-${{ github.run_attempt }}
           path: unit-test.log
@@ -165,7 +165,7 @@ jobs:
         run: npm run test:e2e -- --project=chromium
       - name: E2E診断Artifactを保存
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: playwright-diagnostics-${{ github.run_attempt }}
           path: |
