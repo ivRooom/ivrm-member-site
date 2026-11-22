@@ -61,6 +61,7 @@ jobs:
     name: OIDC + SSMで共有EC2へデプロイ
     needs: validate
     if: >-
+      github.event_name == 'workflow_dispatch' &&
       vars.AWS_RUNTIME_INSTANCE_ID != '' &&
       vars.AWS_RUNTIME_DEPLOY_ROLE_ARN != ''
     runs-on: ubuntu-latest
