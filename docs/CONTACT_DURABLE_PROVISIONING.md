@@ -1,3 +1,6 @@
+> **状態: Historical（2026-07 時点の構築結果の記録）**
+> 本書は Contact Durable Mode の本番構築結果を記録したものです。現在の運用手順は `CONTACT_QUEUE_D1.md` を参照してください。（2026-11-11 の文書整理でルートから docs/ へ移動）
+
 # Contact Durable Mode 本番構築結果
 
 GitHub ActionsからCloudflare本番環境へ、Contact Durable Modeで使用するリソースを作成しました。
